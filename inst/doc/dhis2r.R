@@ -59,9 +59,16 @@ dhis2_play_connection$get_metadata(endpoint = "periodTypes", fields = ":all")
 dhis2_play_connection$get_metadata(endpoint = "indicators")
 
 ## -----------------------------------------------------------------------------
-dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths < 5 yrs)
-                                    org_unit =   c("ImspTQPwCqd"), #Sierra Leone (National level)
-                                    period = "LAST_12_MONTHS",
-                                    output_scheme = "NAME")
+# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu",
+#                                     org_unit = c("O6uvpzGd5pu", "fdc6uOvgoji"),
+#                                     period = "202101",
+#                                     output_scheme = "NAME")
+
+
+## -----------------------------------------------------------------------------
+# dhis2_play_connection$get_analytics(analytic = "FTRrcoaog83", #Accute Flaccid Paralysis (Deaths < 5 yrs)
+#                                     org_unit =   c("ImspTQPwCqd"), #Sierra Leone (National level)
+#                                     period = "LAST_12_MONTHS",
+#                                     output_scheme = "NAME")
 
 
