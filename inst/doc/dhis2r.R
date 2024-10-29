@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -8,15 +8,12 @@ knitr::opts_chunk$set(
 library(dhis2r)
 
 ## -----------------------------------------------------------------------------
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/", 
-                                    username = "admin",
-                                    password = "district",
-                                    api_version = "2.39.0.1",
-                                    api_version_position = "before")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+                                    api_token = "d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066")
 
 ## -----------------------------------------------------------------------------
+# [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)
 dhis2_play_connection$get_user_info()
-
 
 ## -----------------------------------------------------------------------------
 dhis2_play_connection$account_info

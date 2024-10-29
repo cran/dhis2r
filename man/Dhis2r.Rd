@@ -14,10 +14,12 @@ The R6 Class called `Dhis2r` representing a DHIS2 instance connection
 You can use a DHIS2 instance connection to get data several times without needing to manually supply your user credentials on each API call.
 }
 \examples{
-\dontrun{
+# Load dhis2r
+library(dhis2r)
 # connect to the DHIS2 instance
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
- username = "admin",  password = "district",api_version = "2.39.0.1")
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+username = "admin",
+password = "district")
 
 # get all the available resources
 dhis2_play_connection$get_metadata()
@@ -39,7 +41,7 @@ org_unit =   c("O6uvpzGd5pu", "fdc6uOvgoji"),
 period = "LAST_12_MONTHS",
  output_scheme = "NAME")
 
-}
+
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -62,6 +64,7 @@ period = "LAST_12_MONTHS",
 \item \href{#method-Dhis2r-get_metadata}{\code{Dhis2r$get_metadata()}}
 \item \href{#method-Dhis2r-get_metadata_fields}{\code{Dhis2r$get_metadata_fields()}}
 \item \href{#method-Dhis2r-get_analytics}{\code{Dhis2r$get_analytics()}}
+\item \href{#method-Dhis2r-get_any_analytic}{\code{Dhis2r$get_any_analytic()}}
 \item \href{#method-Dhis2r-clone}{\code{Dhis2r$clone()}}
 }
 }
@@ -73,8 +76,9 @@ Create a connection to a DHIS2 instance using basic authentication
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Dhis2r$new(
   base_url,
-  username,
-  password,
+  username = NULL,
+  password = NULL,
+  api_token = NULL,
   api_version = NULL,
   api_version_position = c("after", "before")
 )}\if{html}{\out{</div>}}
@@ -88,6 +92,8 @@ Create a connection to a DHIS2 instance using basic authentication
 \item{\code{username}}{Registered username e.g "admin"}
 
 \item{\code{password}}{Registered password e.g "district"}
+
+\item{\code{api_token}}{Personal Access Token (PAT) to use instead of username and password}
 
 \item{\code{api_version}}{The api version e.g "33"}
 
@@ -141,7 +147,7 @@ A data frame
 \subsection{Method \code{get_metadata_fields()}}{
 Get all possible fields for a specific metadata resource from a DHIS2 instance
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_metadata_fields(endpoint = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_metadata_fields(endpoint)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -183,7 +189,27 @@ Get all possible analytics resources from a DHIS2 instance i.e
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A vector of all possible fields for a specific metadata
+A data frame of the analytics resource
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Dhis2r-get_any_analytic"></a>}}
+\if{latex}{\out{\hypertarget{method-Dhis2r-get_any_analytic}{}}}
+\subsection{Method \code{get_any_analytic()}}{
+Get all any analytics resource from a DHIS2 instance to cater for long DHIS2 favorites
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Dhis2r$get_any_analytic(endpoint_url)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{endpoint_url}}{string part of Analytic(s) from a DHIS2 instance api endpoint starting from 'analytics.json?dimension='}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A data frame of the analytics resource
 }
 }
 \if{html}{\out{<hr>}}

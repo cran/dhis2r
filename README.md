@@ -46,7 +46,13 @@ billion people.
 
 ## Installation
 
-You can install the development version of dhis2r from
+You can install the stable version of dhis2r from CRAN with:
+
+``` r
+install.packages("dhis2r")
+```
+
+You can install also the development version of dhis2r from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -59,18 +65,37 @@ devtools::install_github("amanyiraho/dhis2r")
 ### How to connect to a DHIS2?
 
 Users must be authenticated to access a specific DHIS2 instance before
-connecting to it.
+connecting to it. You can use
+
+1.  `username` and `password`
+
+2.  Personal Access Token (PAT)
+
+#### 1. Using `username` and `password`
 
 The easiest way to connect to a DHIS2 instance using dhis2r is to use
 the `username` and `password` of the DHIS2 user.
 
 ``` r
 library(dhis2r)
-dhis2_play_connection <- Dhis2r$new(base_url = "https://play.dhis2.org/",
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
                                     username = "admin",
-                                    password = "district",
-                                    api_version = "2.39.0.1",
-                                    api_version_position = "before")
+                                    password = "district")
+```
+
+#### 2. Using Personal Access Token (PAT)
+
+Alternatively you can generate a [personal access
+token](https://docs.dhis2.org/en/develop/using-the-api/dhis-core-version-master/introduction.html#webapi_pat_authentication)
+and use that to connect.
+
+``` r
+library(dhis2r)
+
+# Replace the value of api_token with the token you have generated
+
+dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
+                                    api_token = "d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066")
 ```
 
 `Dhis2r$new()` returns a `Dhis2r` R6 class which represents a DHIS2
@@ -86,10 +111,10 @@ Analytics data can include data from indicators, dataElements, program
 indicators, etc.
 
 ``` r
-# dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
-#                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
-#                                     period = "202101",
-#                                     output_scheme = "NAME" )
+ dhis2_play_connection$get_analytics(analytic = "s46m5MS0hxu", #BCG doses given
+                                     org_unit = "ImspTQPwCqd", #Sierra Leone (National level)
+                                     period = "202101",
+                                     output_scheme = "NAME" )
 ```
 
 You can pull data on the following:
