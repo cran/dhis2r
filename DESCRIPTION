@@ -1,6 +1,6 @@
 Package: dhis2r
 Title: Client for the 'DHIS2' Web API
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
     person("Robinson", "Amanyiraho", , "amanyiraho@gmail.com", role = c("cre", "aut",  "cph"),
            comment = c(ORCID = "0000-0002-7747-1367"))
@@ -18,9 +18,9 @@ VignetteBuilder: knitr
 RoxygenNote: 7.3.1
 LazyData: true
 NeedsCompilation: no
-Packaged: 2024-10-28 21:32:42 UTC; am
+Packaged: 2024-11-03 19:16:06 UTC; am
 Author: Robinson Amanyiraho [cre, aut, cph]
     (<https://orcid.org/0000-0002-7747-1367>)
 Maintainer: Robinson Amanyiraho <amanyiraho@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-10-29 08:20:02 UTC
+Date/Publication: 2024-11-04 08:50:14 UTC

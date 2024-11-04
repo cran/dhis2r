@@ -9,7 +9,8 @@ library(dhis2r)
 
 ## -----------------------------------------------------------------------------
 dhis2_play_connection <- Dhis2r$new(base_url = "https://play.im.dhis2.org/stable-2-40-5",
-                                    api_token = "d2pat_2EkxmqdxtwAGDGe1hXzpWEixYdvHGRw71587176066")
+                                    username = "admin",
+                                    password = "district")
 
 ## -----------------------------------------------------------------------------
 # [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)

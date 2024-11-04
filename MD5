@@ -1,7 +1,7 @@
-1e0dedccd4e358e29090d30b8991cebb *DESCRIPTION
+0d2caf70a742d9688897efe2c9460506 *DESCRIPTION
 142c73918c37bc9f2b910ebef2a6d4db *LICENSE
 6ef9f910009519801a186f30bf8a7e54 *NAMESPACE
-5546f0008b8e4ba018c72bd1cd57d894 *NEWS.md
+d3e0ff76918522be5729e19657196286 *NEWS.md
 24ecc22262e87945457e2a4130d06086 *R/connect.R
 f832158bc94a280fedd58073266e9918 *R/data.R
 134ef492567a8bdd6e9e3546c87ab082 *R/dhis2r-package.R
@@ -12,9 +12,9 @@ b45aa25ed431a370ac324cca411954e3 *R/utils.R
 7276618454d3e247e868861645acd054 *README.md
 b5d4059ac9ea5ab5297a2506fa075180 *build/vignette.rds
 3710c0862eaebe034a296edf4aac941d *data/relative_periods.rda
-f91ee22d4a4875ebca6fb4a7b69a00c1 *inst/doc/dhis2r.R
-30c6ab3767f69db72d522671f795e939 *inst/doc/dhis2r.Rmd
-d62e4e5c84a8c86fca771973614509c3 *inst/doc/dhis2r.html
+8710f2f694b095405a8f6391dce1f924 *inst/doc/dhis2r.R
+8c3eff457e76fe242a9afde9c3af3044 *inst/doc/dhis2r.Rmd
+f252122944409481bd9634ebd9e07629 *inst/doc/dhis2r.html
 bb5a66504a66507d2ecf404933b881c6 *inst/logo/logo.R
 6bb42bffa9cd5c805adaa88ab202054f *man/Dhis2r.Rd
 c4857ca53422db495f03faa36fcbe0a0 *man/dhis2r-package.Rd
@@ -22,4 +22,4 @@ c4857ca53422db495f03faa36fcbe0a0 *man/dhis2r-package.Rd
 27b32dd2b6a8841a98eef0cac9089dd4 *man/relative_periods.Rd
 0a90387fd41f57d319560aa709c3c5b0 *tests/testthat.R
 7af57c48dc37bb5646a0d5c09eae2c5d *tests/testthat/test-connect.R
-30c6ab3767f69db72d522671f795e939 *vignettes/dhis2r.Rmd
+8c3eff457e76fe242a9afde9c3af3044 *vignettes/dhis2r.Rmd
