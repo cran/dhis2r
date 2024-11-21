@@ -354,7 +354,7 @@ preferred choice when creating a new app/script etc.</p>
 <h3>Get user information</h3>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># [Ways of keeping your user credentials safe](https://solutions.posit.co/connections/db/best-practices/managing-credentials/)</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_user_info</span>()</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/me&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/me</span></span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt;              name             email </span></span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;     &quot;John Traore&quot; &quot;dummy@dhis2.org&quot;</span></span></code></pre></div>
 <p>Get information about the account</p>
@@ -370,33 +370,39 @@ preferred choice when creating a new app/script etc.</p>
 <h3>Get metadata</h3>
 <p>Get all resources on which you can get metadata on.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a> dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>()</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/resources&quot;</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/resources</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 89 × 4</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;    displayName                singular               plural                href </span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                      &lt;chr&gt;                  &lt;chr&gt;                 &lt;chr&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;  1 Relationships              relationship           relationships         http…</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;  2 Tracked Entity Attributes  trackedEntityAttribute trackedEntityAttribu… http…</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;  3 Data Element Operands      dataElementOperand     dataElementOperands   http…</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;  4 Program Indicators         programIndicator       programIndicators     http…</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt;  5 Job Configurations         jobConfiguration       jobConfigurations     http…</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;  6 Icons                      icon                   icons                 http…</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;  7 Program Rules              programRule            programRules          http…</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;  8 Category Option Group Sets categoryOptionGroupSet categoryOptionGroupS… http…</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;  9 Event Hooks                eventHook              eventHooks            http…</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 10 User Groups                userGroup              userGroups            http…</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;    displayName                     singular                    plural      href </span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                           &lt;chr&gt;                       &lt;chr&gt;       &lt;chr&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt;  1 Program Rule Actions            programRuleAction           programRul… http…</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;  2 Job Configurations              jobConfiguration            jobConfigu… http…</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt;  3 Program Rules                   programRule                 programRul… http…</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt;  4 Constants                       constant                    constants   http…</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt;  5 Data Approval Workflows         dataApprovalWorkflow        dataApprov… http…</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt;  6 Category Combos                 categoryCombo               categoryCo… http…</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt;  7 Data Set Notification Templates dataSetNotificationTemplate dataSetNot… http…</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt;  8 Program Stage Sections          programStageSection         programSta… http…</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt;  9 Analytics Table Hooks           analyticsTableHook          analyticsT… http…</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 10 Event Hooks                     eventHook                   eventHooks  http…</span></span>
 <span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 79 more rows</span></span></code></pre></div>
 <p>Get metadata on Data Elements using the plural name
 <code>dataElements</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>(<span class="at">endpoint =</span> <span class="st">&quot;dataElements&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid&quot;</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt;   &lt;named list&gt;        </span></span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; 1 &lt;int [1]&gt;           </span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; 2 &lt;int [1]&gt;           </span></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; 3 &lt;int [1]&gt;           </span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; 4 &lt;chr [1]&gt;           </span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; 5 &lt;int [1]&gt;</span></span></code></pre></div>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 50 × 2</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt;    name                                      id         </span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                     &lt;chr&gt;      </span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt;  1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) FTRrcoaog83</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt;  2 Acute Flaccid Paralysis (AFP) follow-up   P3jJH5Tu5VC</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt;  3 Acute Flaccid Paralysis (AFP) new         FQ2o8UBlcrS</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt;  4 Acute Flaccid Paralysis (AFP) referrals   M62VHgYT2n0</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt;  5 Additional medication                     WO8yRIZb7nb</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt;  6 Additional notes related to facility      uF1DLnZNlWe</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt;  7 Admission Date                            eMyVanycQSC</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt;  8 adresse exact                             eTuKNBLi58g</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt;  9 Age in years                              qrur9Dvnyt5</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 10 Age of LLINs                              JuTpJ2Ywq5b</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more rows</span></span></code></pre></div>
 <p>The code above only returns it’s name and code/ID used on DHIS2, we
 shall use the code to get analytics.</p>
 <div id="get-all-possible-fields-of-a-metadata-of-a-resource" class="section level4">
@@ -404,7 +410,7 @@ shall use the code to get analytics.</p>
 <p>You can get more fields beyond ID and name</p>
 <p><em>NOTE</em> All resources have different fields</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a> dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata_fields</span>(<span class="at">endpoint =</span> <span class="st">&quot;dataElements&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=%3Aall&amp;paging=true&amp;pageSize=1&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;access&quot;            &quot;aggregationLevels&quot; &quot;aggregationType&quot;  </span></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;attributeValues&quot;   &quot;categoryCombo&quot;     &quot;code&quot;             </span></span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;created&quot;           &quot;createdBy&quot;         &quot;dataElementGroups&quot;</span></span>
@@ -418,7 +424,7 @@ shall use the code to get analytics.</p>
 <span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co">#&gt; [31] &quot;user&quot;              &quot;userAccesses&quot;      &quot;userGroupAccesses&quot;</span></span>
 <span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a><span class="co">#&gt; [34] &quot;valueType&quot;         &quot;zeroIsSignificant&quot;</span></span></code></pre></div>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a> dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata_fields</span>(<span class="at">endpoint =</span> <span class="st">&quot;organisationUnits&quot;</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1&quot;</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;access&quot;                 &quot;ancestors&quot;              &quot;attributeValues&quot;       </span></span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt;  [4] &quot;children&quot;               &quot;code&quot;                   &quot;created&quot;               </span></span>
 <span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt;  [7] &quot;dataSets&quot;               &quot;dimensionItem&quot;          &quot;dimensionItemType&quot;     </span></span>
@@ -431,7 +437,7 @@ shall use the code to get analytics.</p>
 <span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co">#&gt; [28] &quot;sharing&quot;                &quot;shortName&quot;              &quot;translations&quot;          </span></span>
 <span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="co">#&gt; [31] &quot;userAccesses&quot;           &quot;userGroupAccesses&quot;      &quot;users&quot;</span></span></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a> dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata_fields</span>(<span class="at">endpoint =</span> <span class="st">&quot;indicators&quot;</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1&quot;</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=%3Aall&amp;paging=true&amp;pageSize=1</span></span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#&gt;  [1] &quot;access&quot;                        &quot;annualized&quot;                   </span></span>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co">#&gt;  [3] &quot;attributeValues&quot;               &quot;code&quot;                         </span></span>
 <span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="co">#&gt;  [5] &quot;created&quot;                       &quot;createdBy&quot;                    </span></span>
@@ -457,32 +463,44 @@ shall use the code to get analytics.</p>
 <h3>Getting metadata fields beyond ID and Name</h3>
 <p>dataElements</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a> dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>(<span class="at">endpoint =</span> <span class="st">&quot;dataElements&quot;</span>, <span class="at">fields =</span> <span class="fu">c</span>(<span class="st">&quot;name&quot;</span>,<span class="st">&quot;id&quot;</span>,<span class="st">&quot;aggregationType&quot;</span>))</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid%2CaggregationType&quot;</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt;   &lt;named list&gt;        </span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt; 1 &lt;int [1]&gt;           </span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt; 2 &lt;int [1]&gt;           </span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; 3 &lt;int [1]&gt;           </span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; 4 &lt;chr [1]&gt;           </span></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; 5 &lt;int [1]&gt;</span></span></code></pre></div>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/dataElements?fields=name%2Cid%2CaggregationType</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 50 × 3</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co">#&gt;    name                                      aggregationType id         </span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                     &lt;chr&gt;           &lt;chr&gt;      </span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co">#&gt;  1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) SUM             FTRrcoaog83</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="co">#&gt;  2 Acute Flaccid Paralysis (AFP) follow-up   SUM             P3jJH5Tu5VC</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt;  3 Acute Flaccid Paralysis (AFP) new         SUM             FQ2o8UBlcrS</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt;  4 Acute Flaccid Paralysis (AFP) referrals   SUM             M62VHgYT2n0</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt;  5 Additional medication                     NONE            WO8yRIZb7nb</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt;  6 Additional notes related to facility      SUM             uF1DLnZNlWe</span></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt;  7 Admission Date                            AVERAGE         eMyVanycQSC</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">#&gt;  8 adresse exact                             NONE            eTuKNBLi58g</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="co">#&gt;  9 Age in years                              AVERAGE         qrur9Dvnyt5</span></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co">#&gt; 10 Age of LLINs                              SUM             JuTpJ2Ywq5b</span></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more rows</span></span></code></pre></div>
 <p>organisationUnits</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>(<span class="at">endpoint =</span> <span class="st">&quot;organisationUnits&quot;</span>,</span>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>                                                        <span class="at">fields =</span>  <span class="fu">c</span>(<span class="st">&quot;name&quot;</span>,<span class="st">&quot;id&quot;</span>, <span class="st">&quot;level&quot;</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel&quot;</span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;   &lt;named list&gt;        </span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt; 1 &lt;int [1]&gt;           </span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; 2 &lt;int [1]&gt;           </span></span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; 3 &lt;int [1]&gt;           </span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; 4 &lt;chr [1]&gt;           </span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; 5 &lt;int [1]&gt;</span></span></code></pre></div>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/organisationUnits?fields=name%2Cid%2Clevel</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt; # A tibble: 50 × 3</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt;    name                      id          level</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                     &lt;chr&gt;       &lt;int&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt;  1 Adonkia CHP               Rp268JB6Ne4     4</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt;  2 Afro Arab Clinic          cDw53Ej8rju     4</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt;  3 Agape CHP                 GvFqTavdpGE     4</span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt;  4 Ahamadyya Mission Cl      plnHVbJR6p4     4</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;  5 Ahmadiyya Muslim Hospital BV4IomHvri4     4</span></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt;  6 Air Port Centre, Lungi    qjboFI0irVu     4</span></span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt;  7 Alkalia CHP               dWOAzMcK2Wt     4</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt;  8 Allen Town Health Post    kbGqmM6ZWWV     4</span></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt;  9 Antananarivo              w8OOoqYFAWI     2</span></span>
+<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; 10 Approved School CHP       eoYV2p74eVz     4</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more rows</span></span></code></pre></div>
 <p>You can use <code>&quot;:all&quot;</code> in the fields to get all fields of
 metadata associated with a resources</p>
 <p>periodTypes</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>(<span class="at">endpoint =</span> <span class="st">&quot;periodTypes&quot;</span>, <span class="at">fields =</span> <span class="st">&quot;:all&quot;</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/periodTypes?fields=%3Aall&quot;</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/periodTypes?fields=%3Aall</span></span>
 <span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 19 × 4</span></span>
 <span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co">#&gt;    name            isoDuration isoFormat   frequencyOrder</span></span>
 <span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;           &lt;chr&gt;       &lt;chr&gt;                &lt;int&gt;</span></span>
@@ -509,26 +527,48 @@ metadata associated with a resources</p>
 <div id="indicators" class="section level3">
 <h3>indicators</h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_metadata</span>(<span class="at">endpoint =</span> <span class="st">&quot;indicators&quot;</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=name%2Cid&quot;</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 5 × 1</span></span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">#&gt;   `response_data[[1]]`</span></span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt;   &lt;named list&gt;        </span></span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">#&gt; 1 &lt;int [1]&gt;           </span></span>
-<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">#&gt; 2 &lt;int [1]&gt;           </span></span>
-<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">#&gt; 3 &lt;int [1]&gt;           </span></span>
-<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co">#&gt; 4 &lt;chr [1]&gt;           </span></span>
-<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co">#&gt; 5 &lt;int [1]&gt;</span></span></code></pre></div>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/indicators?fields=name%2Cid</span></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="co">#&gt; # A tibble: 50 × 2</span></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co">#&gt;    name                                 id         </span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;                                &lt;chr&gt;      </span></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co">#&gt;  1 ANC 1-3 Dropout Rate                 ReUHfIn0pTQ</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="co">#&gt;  2 ANC 1 Coverage                       Uvn6LCg7dVU</span></span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">#&gt;  3 ANC 2 Coverage                       OdiHJayrsKo</span></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="co">#&gt;  4 ANC 3 Coverage                       sB79w2hiLp8</span></span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a><span class="co">#&gt;  5 ANC =&gt; 4 Coverage                    AUqdhY4mpvp</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a><span class="co">#&gt;  6 ANC IPT 1 Coverage                   dwEq7wi6nXV</span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a><span class="co">#&gt;  7 ANC IPT 2 Coverage                   c8fABiNpT0B</span></span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a><span class="co">#&gt;  8 ANC LLITN coverage                   Tt5TAvdfdVK</span></span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a><span class="co">#&gt;  9 ANC TT2 coverage                     puykO1tbcdi</span></span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a><span class="co">#&gt; 10 ANC visits per clinical professional Lzg9LtG1xg3</span></span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a><span class="co">#&gt; # ℹ 40 more rows</span></span></code></pre></div>
 </div>
 <div id="get-analtyics" class="section level3">
 <h3>Get analtyics</h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># dhis2_play_connection$get_analytics(analytic = &quot;s46m5MS0hxu&quot;,</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="co">#                                     org_unit = c(&quot;O6uvpzGd5pu&quot;, &quot;fdc6uOvgoji&quot;),</span></span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co">#                                     period = &quot;202101&quot;,</span></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co">#                                     output_scheme = &quot;NAME&quot;)</span></span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># dhis2_play_connection$get_analytics(analytic = &quot;FTRrcoaog83&quot;, #Accute Flaccid Paralysis (Deaths &lt; 5 yrs)</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="co">#                                     org_unit =   c(&quot;ImspTQPwCqd&quot;), #Sierra Leone (National level)</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co">#                                     period = &quot;LAST_12_MONTHS&quot;,</span></span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="co">#                                     output_scheme = &quot;NAME&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_analytics</span>(<span class="at">analytic =</span> <span class="st">&quot;s46m5MS0hxu&quot;</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>                                    <span class="at">org_unit =</span> <span class="fu">c</span>(<span class="st">&quot;O6uvpzGd5pu&quot;</span>, <span class="st">&quot;fdc6uOvgoji&quot;</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>                                    <span class="at">period =</span> <span class="st">&quot;202101&quot;</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>                                    <span class="at">output_scheme =</span> <span class="st">&quot;NAME&quot;</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/analytics?dimension=dx%3As46m5MS0hxu&amp;dimension=ou%3AO6uvpzGd5pu%3Bfdc6uOvgoji&amp;dimension=pe%3A202101&amp;outputIdScheme=NAME</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="co">#&gt; # A tibble: 2 × 4</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co">#&gt;   analytic        org_unit period       value</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;           &lt;fct&gt;    &lt;chr&gt;        &lt;dbl&gt;</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="co">#&gt; 1 BCG doses given Bombali  January 2021   537</span></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a><span class="co">#&gt; 2 BCG doses given Bo       January 2021  1196</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>dhis2_play_connection<span class="sc">$</span><span class="fu">get_analytics</span>(<span class="at">analytic =</span> <span class="st">&quot;FTRrcoaog83&quot;</span>, <span class="co">#Accute Flaccid Paralysis (Deaths &lt; 5 yrs)</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>                                    <span class="at">org_unit =</span>   <span class="fu">c</span>(<span class="st">&quot;ImspTQPwCqd&quot;</span>), <span class="co">#Sierra Leone (National level)</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>                                    <span class="at">period =</span> <span class="st">&quot;LAST_12_MONTHS&quot;</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>                                    <span class="at">output_scheme =</span> <span class="st">&quot;NAME&quot;</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="co">#&gt; https://play.im.dhis2.org/stable-2-40-5/api/analytics?dimension=dx%3AFTRrcoaog83&amp;dimension=ou%3AImspTQPwCqd&amp;dimension=pe%3ALAST_12_MONTHS&amp;outputIdScheme=NAME</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="co">#&gt; # A tibble: 6 × 4</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="co">#&gt;   analytic                                  org_unit     period         value</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="co">#&gt;   &lt;fct&gt;                                     &lt;fct&gt;        &lt;chr&gt;          &lt;dbl&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a><span class="co">#&gt; 1 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone October 2024       3</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="co">#&gt; 2 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone September 2024   101</span></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="co">#&gt; 3 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone August 2024      254</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a><span class="co">#&gt; 4 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone March 2024         1</span></span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a><span class="co">#&gt; 5 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone February 2024     61</span></span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a><span class="co">#&gt; 6 Accute Flaccid Paralysis (Deaths &lt; 5 yrs) Sierra Leone January 2024      23</span></span></code></pre></div>
 </div>
 
 
